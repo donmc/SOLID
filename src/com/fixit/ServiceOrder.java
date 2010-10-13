@@ -1,14 +1,14 @@
 package com.fixit;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ServiceOrder {
 	
-	private Map<Part, Integer> parts;
+	private List<LineItem> partLineItems;
 
 	public ServiceOrder() {
-		parts = new HashMap<Part, Integer>();
+		partLineItems = new ArrayList<LineItem>();
 	}
 	
 	public void addPart(Part part) {
@@ -16,20 +16,16 @@ public class ServiceOrder {
 	}
 
 	public void addPart(Part part, int quantity) {
+		LineItem lineItem = new LineItem(part, quantity);
 		
-		if (parts.containsKey(part)) {
-			quantity += parts.get(part);
-		}
-		
-		parts.put(part, quantity);
+		partLineItems.add(lineItem);
 	}
 	
 	public double total() {
 		double total = 0;
 		
-		for (Part part : parts.keySet()) {
-			int quantity = parts.get(part);
-			total += part.getPrice() * quantity;
+		for (LineItem lineItem : partLineItems) {
+			total += lineItem.getPart().getPrice() * lineItem.getQuantity();
 		}
 		
 		return total;
