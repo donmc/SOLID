@@ -1,6 +1,7 @@
 package com.fixit;
 
-import org.junit.Assert;
+import static org.junit.Assert.*;
+
 import org.junit.Test;
 
 
@@ -13,7 +14,7 @@ public class WhenCalculatingTotal {
 		
 		double total = order.total();
 		
-		Assert.assertEquals(299.99, total, 0.01);
+		assertEquals(299.99, total, 0.01);
 	}
 	
 	@Test
@@ -24,6 +25,6 @@ public class WhenCalculatingTotal {
 		
 		double total = order.total();
 		
-		Assert.assertEquals(429.98, total, 0.01);
+		assertEquals(429.98, total, 0.01);
 	}
 }
