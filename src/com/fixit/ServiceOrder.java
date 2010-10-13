@@ -3,9 +3,9 @@ package com.fixit;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ServiceOrder {
+public class ServiceOrder implements Receipt {
 	
-	private List<LineItem> itemLineItems;
+	List<LineItem> itemLineItems;
 
 	public ServiceOrder() {
 		itemLineItems = new ArrayList<LineItem>();

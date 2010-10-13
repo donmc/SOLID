@@ -2,7 +2,7 @@ package com.fixit;
 
 public class FixItMechanicsSystem {
 
-	public ServiceOrder finalizeOrder() {
+	public Receipt finalizeOrder() {
 		return new ServiceOrder();
 	}
 

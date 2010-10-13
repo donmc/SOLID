@@ -2,7 +2,7 @@ package com.fixit.ui;
 
 import com.epson.printer.EpsonTMT88IVPrinter;
 import com.fixit.FixItMechanicsSystem;
-import com.fixit.ServiceOrder;
+import com.fixit.Receipt;
 
 public class ReceiptGenerator {
 
@@ -11,8 +11,9 @@ public class ReceiptGenerator {
 	private String initString = "sasllkslsl398383fa";
 
 	public void PrintReceipt() {
-		ServiceOrder order = system.finalizeOrder();
-		String receiptString = "Total........ $" + order.total();
+		Receipt receipt = system.finalizeOrder();
+		String receiptString = "Total........ $" + receipt.total();
+		
 		epsonTMT88IVPrinter.initialize(initString);
 		epsonTMT88IVPrinter.printBwMed239(receiptString);
 		epsonTMT88IVPrinter.flush();
