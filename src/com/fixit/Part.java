@@ -14,6 +14,10 @@ public class Part {
 		this.wholesalePrice = price;
 		this.markupPercentage = markup;
 	}
+	
+	public double getPrice() {
+		return wholesalePrice * (markupPercentage/100d +1);
+	}
 
 	public double getWholesalePrice() {
 		return this.wholesalePrice;

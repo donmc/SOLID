@@ -25,9 +25,7 @@ public class ServiceOrder {
 		double total = 0;
 		
 		for (LineItem lineItem : partLineItems) {
-			total += lineItem.getPart().getWholesalePrice() 
-				   * (lineItem.getPart().getMarkupPercentage()/100d + 1)
-				   * lineItem.getQuantity();
+			total += lineItem.lineTotal();
 		}
 		
 		return total;
