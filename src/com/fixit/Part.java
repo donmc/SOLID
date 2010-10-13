@@ -1,21 +1,20 @@
 package com.fixit;
 
-public class Part {
+public class Part extends Item {
 
 	private double wholesalePrice;
 	private int    markupPercentage;
-	private String name;
 	
 	public Part(String name, double price) {
 		this(name, price, 0);
 	}
 	public Part(String name, double price, int markup) {
-		this.name = name;
+		super(name);
 		this.wholesalePrice = price;
 		this.markupPercentage = markup;
 	}
 	
-	public double getPrice() {
+	public double calculatePrice() {
 		return wholesalePrice * (markupPercentage/100d +1);
 	}
 
@@ -25,9 +24,5 @@ public class Part {
 	
 	public int getMarkupPercentage() {
 		return markupPercentage;
-	}
-
-	public String getName() {
-		return name;
 	}
 }

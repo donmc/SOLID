@@ -9,7 +9,7 @@ public class WhenAddingMarkupToParts {
 	@Test
 	public void shouldApplyMarkupWhenTotaling() {
 		ServiceOrder order = new ServiceOrder();
-		order.addPart(new Part("Fan Belt", 100, 20));
+		order.addItem(new Part("Fan Belt", 100, 20));
 		
 		double total = order.total();
 		

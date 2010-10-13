@@ -5,26 +5,26 @@ import java.util.List;
 
 public class ServiceOrder {
 	
-	private List<LineItem> partLineItems;
+	private List<LineItem> itemLineItems;
 
 	public ServiceOrder() {
-		partLineItems = new ArrayList<LineItem>();
+		itemLineItems = new ArrayList<LineItem>();
 	}
 	
-	public void addPart(Part part) {
-		addPart(part, 1);
+	public void addItem(Item item) {
+		addItem(item, 1);
 	}
 
-	public void addPart(Part part, int quantity) {
-		LineItem lineItem = new LineItem(part, quantity);
+	public void addItem(Item item, int quantity) {
+		LineItem lineItem = new LineItem(item, quantity);
 		
-		partLineItems.add(lineItem);
+		itemLineItems.add(lineItem);
 	}
 	
 	public double total() {
 		double total = 0;
 		
-		for (LineItem lineItem : partLineItems) {
+		for (LineItem lineItem : itemLineItems) {
 			total += lineItem.lineTotal();
 		}
 		

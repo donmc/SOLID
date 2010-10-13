@@ -2,15 +2,15 @@ package com.fixit;
 
 public class LineItem {
 	private int quantity;
-	private Part part;
+	private Item item;
 	
-	public LineItem(Part part, int quantity) {
-		this.part = part;
+	public LineItem(Item item, int quantity) {
+		this.item = item;
 		this.quantity = quantity;
 	}
 
-	public Part getPart() {
-		return part;
+	public Item getItem() {
+		return item;
 	}
 	
 	public int getQuantity() {
@@ -22,6 +22,6 @@ public class LineItem {
 	}
 	
 	public double lineTotal() {
-		return part.getPrice() * quantity;
+		return item.calculatePrice() * quantity;
 	}
 }

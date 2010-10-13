@@ -11,7 +11,7 @@ public class WhenSpecifyingAdditionalQuantities {
 	@Test
 	public void shouldCalculateTotalAccordingly() {
 		ServiceOrder order = new ServiceOrder();
-		order.addPart(new Part("Piston", 299.99), 3);
+		order.addItem(new Part("Piston", 299.99), 3);
 		
 		double total = order.total();
 		
@@ -24,8 +24,8 @@ public class WhenSpecifyingAdditionalQuantities {
 		
 		Part part = new Part("Piston", 299.99);
 		
-		order.addPart(part, 3);
-		order.addPart(part, 2);
+		order.addItem(part, 3);
+		order.addItem(part, 2);
 		
 		double total = order.total();
 		
